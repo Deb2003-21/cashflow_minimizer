@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.Buffer;
 import java.time.LocalDate;
 
 class Trans {
@@ -62,6 +66,18 @@ class Transactions {
 
 }
 
+class fileW {
+    /**
+     * This class is used to write the transactions to a file.
+     * It appends the transactions to a file named "transactions.txt".
+     */
+    public BufferedWriter file1() throws IOException {
+        // Create a BufferedWriter to write to the file
+        return new BufferedWriter(new FileWriter("transactions.txt", true));
+
+    }
+}
+
 class Cash_minimizer {
     /**
      * This method calculates the total balance after processing all transactions.
@@ -79,17 +95,36 @@ class Cash_minimizer {
         double posetive_bal = inital;
         double remaining = 0.0;
         List<Trans> n_transactions = transactions.getSorted(transactions.n_transactions);
-        for (Trans t : transactions.p_transactions) {
-            posetive_bal += t.amount;
-        }
-        for (Trans t : n_transactions) {
 
-            if (posetive_bal + t.amount < 0) {
-                skip.add(t);
-                remaining = remaining - t.amount;
-                continue;
+        try {
+            // BufferedWriter writer = new BufferedWriter(new FileWriter("transactions.txt",
+            // true));
+            fileW f = new fileW();
+            BufferedWriter writer = f.file1();
+
+            // Write the initial balance and total balance with initial transactions
+            for (Trans t : transactions.p_transactions) {
+                posetive_bal += t.amount;
             }
-            posetive_bal = posetive_bal + t.amount;
+            writer.write("Initial balance: " + inital + "\n");
+            writer.write("total balance with initial transactions: " + posetive_bal + "\n\n");
+            writer.write("Fullfilled tasks: \n");
+
+            for (Trans t : n_transactions) {
+
+                if (posetive_bal + t.amount < 0) {
+                    skip.add(t);
+                    remaining = remaining - t.amount;
+                    continue;
+                }
+                posetive_bal = posetive_bal + t.amount;
+                // Write the transaction to the file
+                writer.write(t.date + " " + t.amount + " " + t.des + "\n");
+            }
+            writer.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return new TotalResult(posetive_bal, remaining, skip);
     }
@@ -139,9 +174,19 @@ class Cashflow {
         System.out.println(" More balance needed: " + result.remaining);
 
         // Print skipped transactions
-        System.out.println("Skipped Transactions:");
-        for (Trans t : result.skippedTransactions) {
-            System.out.println(" - " + t.date + ": " + t.amount + " (" + t.des + ")");
+        try {
+            fileW f = new fileW();
+            BufferedWriter writer = f.file1();
+            writer.write("\nSkipped transactions:\n");
+            for (Trans t : result.skippedTransactions) {
+                writer.write(" - " + t.date + ": " + t.amount + " (" + t.des + ")\n");
+            }
+            writer.write("\n Remaining Balance INR: " + result.positiveBalance + "\n");
+            writer.write("Take Loan of INR: " + result.remaining + "\n");
+            writer.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
