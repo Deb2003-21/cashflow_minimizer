@@ -78,8 +78,8 @@ Output:
 
 [File transactions.txt]
 
--Initial balance: 1000.0
--total balance with initial transactions: 14900.0
+- Initial balance: 1000.0
+- total balance with initial transactions: 14900.0
 
 Fullfilled tasks: 
 - 2023-01-10 -3000.0 Rent
