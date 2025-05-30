@@ -78,23 +78,23 @@ Output:
 
 [File transactions.txt]
 
-Initial balance: 1000.0
-total balance with initial transactions: 14900.0
+-Initial balance: 1000.0
+-total balance with initial transactions: 14900.0
 
 Fullfilled tasks: 
-2023-01-10 -3000.0 Rent
-2023-02-10 -3000.0 Rent
-2023-03-10 -3000.0 Rent
-2023-04-10 -3100.0 Rent
-2023-01-05 -200.0 Groceries
-2023-02-07 -250.0 Groceries
-2023-03-04 -180.0 Groceries
-2023-04-05 -230.0 Groceries
-2023-03-12 -400.0 Healthcare
-2023-04-15 -300.0 Healthcare
-2023-01-15 -500.0 Utilities
-2023-02-14 -600.0 Utilities
-2023-01-25 -100.0 Entertainment
+- 2023-01-10 -3000.0 Rent
+- 2023-02-10 -3000.0 Rent
+- 2023-03-10 -3000.0 Rent
+- 2023-04-10 -3100.0 Rent
+- 2023-01-05 -200.0 Groceries
+- 2023-02-07 -250.0 Groceries
+- 2023-03-04 -180.0 Groceries
+- 2023-04-05 -230.0 Groceries
+- 2023-03-12 -400.0 Healthcare
+- 2023-04-15 -300.0 Healthcare
+- 2023-01-15 -500.0 Utilities
+- 2023-02-14 -600.0 Utilities
+- 2023-01-25 -100.0 Entertainment
 
 Skipped transactions:
  - 2023-03-18: -550.0 (Utilities)
@@ -109,8 +109,8 @@ Skipped transactions:
  - 2023-03-30: -250.0 (Shopping)
  - 2023-04-29: -400.0 (Shopping)
 
-Remaining Balance INR: 40.0
-Take Loan of INR: 2660.0
+- Remaining Balance INR: 40.0
+- Take Loan of INR: 2660.0
 
 
 ## Requirements
