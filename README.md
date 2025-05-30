@@ -40,7 +40,7 @@ This project is a Java-based cashflow minimizer that manages cash inflow and out
 
 ## Result
 
-#Input:
+Input:
 ```
 Note- 0 is for posetive transactions and (1-10) has been used for priority 1 menas High and 10 means Low
 
@@ -74,11 +74,43 @@ Note- 0 is for posetive transactions and (1-10) has been used for priority 1 men
 2023-04-29 | -400.0 | Shopping | 7
 
 ```
-#Output:
+Output:
 
+[File transactions.txt]
 
-![Screenshot 2025-05-30 161258](https://github.com/user-attachments/assets/6d5b3e22-0e29-46fe-a7d8-5612ae07ecd7)
+Initial balance: 1000.0
+total balance with initial transactions: 14900.0
 
+Fullfilled tasks: 
+2023-01-10 -3000.0 Rent
+2023-02-10 -3000.0 Rent
+2023-03-10 -3000.0 Rent
+2023-04-10 -3100.0 Rent
+2023-01-05 -200.0 Groceries
+2023-02-07 -250.0 Groceries
+2023-03-04 -180.0 Groceries
+2023-04-05 -230.0 Groceries
+2023-03-12 -400.0 Healthcare
+2023-04-15 -300.0 Healthcare
+2023-01-15 -500.0 Utilities
+2023-02-14 -600.0 Utilities
+2023-01-25 -100.0 Entertainment
+
+Skipped transactions:
+ - 2023-03-18: -550.0 (Utilities)
+ - 2023-04-18: -600.0 (Utilities)
+ - 2023-02-03: -100.0 (Dining)
+ - 2023-02-20: -120.0 (Entertainment)
+ - 2023-03-22: -90.0 (Dining)
+ - 2023-04-21: -130.0 (Entertainment)
+ - 2023-01-28: -150.0 (Transportation)
+ - 2023-03-27: -110.0 (Transportation)
+ - 2023-04-25: -160.0 (Transportation)
+ - 2023-03-30: -250.0 (Shopping)
+ - 2023-04-29: -400.0 (Shopping)
+
+Remaining Balance INR: 40.0
+Take Loan of INR: 2660.0
 
 
 ## Requirements
