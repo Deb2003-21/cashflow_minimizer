@@ -75,6 +75,8 @@ Note- 0 is for posetive transactions and (1-10) has been used for priority 1 men
 
 ```
 #Output:
+
+
 ![Screenshot 2025-05-30 161258](https://github.com/user-attachments/assets/6d5b3e22-0e29-46fe-a7d8-5612ae07ecd7)
 
 
